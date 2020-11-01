@@ -20,7 +20,32 @@ def help_and_exit():
 
 def markdown_converter(style_path, markdown_path):
     print("Converting markdown to HTML...")
+
+    md_file = open(markdown_path)
+    markdown_raw = md_file.read()
+    md_file.close()
+    
+    layout = parse_markdown(markdown_raw)
+
+    sty_file = open(style_path)
+    style_raw = sty_file.read()
+    sty_file.close()
+
+    html = to_html(layout, style_raw)
+
+    newsletter_output = open("newsletter.html", "wt")
+    newsletter_output.write(html)
+    newsletter_output.close()
+
     exit(0)
+
+
+def parse_markdown(markdown_raw):
+    return "Not yet implemented."
+
+
+def to_html(layout, style):
+    return "Not yet implemented."
 
 
 # Program entry
