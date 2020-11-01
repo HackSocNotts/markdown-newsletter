@@ -1,24 +1,123 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Newsletter
-        </title>
-        <style>
-            /* 0 is the CSS. */
-            {0}
-        </style>
-    </head>
-    <body>
-        <header>
-            <!-- Header with logo over a blurred photo. -->
-        </header>
-        <!-- 1 is the main title, 2 is the subtitle, and 3 is the rest of the body's contents. -->
-        {1}
-        {2}
-        {3}
-        <footer>
-            <!-- Footer with links to socials and copyright -->
-        </footer>
-    </body>
+
+<head>
+    <title>
+        Newsletter
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        header {
+            background-color: #00953b;
+            background-image: url(https://i.imgur.com/Vtleywq.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: sans-serif;
+        }
+
+        .centred {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+        }
+
+        /* 0 is the CSS. */
+        .title {
+            /* The big centred title at the top of the newsletter. */
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .subtitle {
+            /* Subtitle at top of newsletter. Basically just bold <p>. */
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .sectionTitle {
+            /* Major section title. Same as title but left aligned.*/
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .itemTitle {
+            /* Individual item title. Smaller, grey and italic. */
+
+        }
+
+        .generalText {
+            /* General email text. Slightly grey with a nice sans-serif font. */
+
+        }
+
+        img {
+            /* Images width matches the rest of the email */
+
+        }
+
+        .inlineLink {
+            /* Inline hyperlinks in other text. Green and underlined. */
+
+        }
+
+        .buttonLink {
+            /* Green button for more prominent hyperlinks */
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Header with logo over a blurred photo. -->
+        <img src="https://i.imgur.com/tkmRN5n.png" alt="HackSoc logo" class="centred">
+    </header>
+    <h1 class="title">Learn WebDev, expanding Slack with .NET, and HackNotts soon</h1>
+    <h4 class="subtitle">Coming up we have a workshop on building and hosting a website with GitHub pages, A talk from Steven Pears on adding to Slack with .NET, and HackNotts is getting closer, so make sure you get your tickets.</h4>
+    <h2>HackNotts</h2>
+    <img src="https://mcusercontent.com/c8d745040f228feb789e242cf/images/33d3a7c3-7e72-4cd2-8ba8-3a9ff4290186.png" alt="HackNotts">
+    <h3>HackNotts: Get your tickets now!</h3>
+    <p>Every year HackNotts, HackSoc's very own hackathon, gathers hundreds of hackers to engage with new technologies, each other, and with the tech industry as a whole. Learn new skills, meet new people, and enjoy workshops and prizes from some great tech companies from Nottingham and beyond.
+
+        This year HackNotts has left our usual venue of the Ada Lovelace Computing Lab, and is instead coming to internet connected host near you!
+        
+        Join us online this year for everything HackNotts is known for sans the food: great people, fascinating workshop content, unique swag, games corners, a giant bear, and more.
+        
+        We also have a swag giveaway on Twitter where you can win just by using the hashtag <a href="https://twitter.com/hashtag/HackNotts2020">#HackNotts2020</a>
+        
+        Tickets are completely free and you can get them in under a minute at the button below.</p>
+        <a class="button" href="https://hacknotts.com">Register for FREE</a>
+    <!-- 1 is the main title, 2 is the subtitle, and 3 is the rest of the body's contents. -->
+    {1}
+    {2}
+    {3}
+    <footer>
+        <!-- Footer with links to socials and copyright -->
+    </footer>
+</body>
+
 </html>
