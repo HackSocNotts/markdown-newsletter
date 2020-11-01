@@ -25,13 +25,13 @@ def markdown_converter(style_path, markdown_path):
     markdown_raw = md_file.read()
     md_file.close()
     
-    layout = parse_markdown(markdown_raw)
+    contents = parse_markdown(markdown_raw)
 
     sty_file = open(style_path)
     style_raw = sty_file.read()
     sty_file.close()
 
-    html = to_html(layout, style_raw)
+    html = to_html(contents, style_raw)
 
     newsletter_output = open("newsletter.html", "wt")
     newsletter_output.write(html)
@@ -41,11 +41,16 @@ def markdown_converter(style_path, markdown_path):
 
 
 def parse_markdown(markdown_raw):
-    return "Not yet implemented."
+    contents = {"title": "<h1 class='title'>This is a title</h1>", "subtitle": "<h4>This is a subtitle</h4>", "content": "<p>This is some content</p>"}
+    return contents
 
 
-def to_html(layout, style):
-    return "Not yet implemented."
+def to_html(contents, style):
+    html_file = open("template.html")
+    initial_html = html_file.read()
+    html_file.close()
+    contents.update({"style": style})
+    return initial_html.format(contents)
 
 
 # Program entry

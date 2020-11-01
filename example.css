@@ -5,7 +5,7 @@ but keep the classes the same.
 */
 
 .title { /* The big centred title at the top of the newsletter. */
-
+    color: red;
 }
 
 .subtitle { /* Subtitle at top of newsletter. Basically just bold <p>. */
