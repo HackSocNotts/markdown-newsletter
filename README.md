@@ -5,4 +5,4 @@ Converts a markdown file to the HTML for sending as a newletter with the appropr
  - A recent version of Python 3 (Only tested on Python 3.8.6)
 
 ## USAGE
-`python3 newsletter.py [markdown file]`
+`python3 newsletter.py [style file] [markdown file]`
