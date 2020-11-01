@@ -26,16 +26,16 @@ def markdown_converter(style_path, markdown_path):
     md_file.close()
     
     contents = parse_markdown(markdown_raw)
-
     sty_file = open(style_path)
-    style_raw = sty_file.read()
+    contents.update({"style": sty_file.read()})
     sty_file.close()
 
-    html = to_html(contents, style_raw)
+    html = to_html(contents)
 
     newsletter_output = open("newsletter.html", "wt")
     newsletter_output.write(html)
     newsletter_output.close()
+    print("Done!")
 
     exit(0)
 
@@ -45,12 +45,17 @@ def parse_markdown(markdown_raw):
     return contents
 
 
-def to_html(contents, style):
+def to_html(contents):
     html_file = open("template.html")
     initial_html = html_file.read()
     html_file.close()
-    contents.update({"style": style})
-    return initial_html.format(contents)
+
+    style = contents["style"]
+    title = contents["title"]
+    subtitle = contents["subtitle"]
+    content = contents["content"]
+
+    return initial_html.format(style, title, subtitle, content)
 
 
 # Program entry
@@ -65,12 +70,11 @@ if __name__ == "__main__":
         help_and_exit()
     
     # Checks files are accessable.
-    if isfile(sys.argv[-2]) and isfile(sys.argv()):
-        print(sys.argv[-2], "is a file.")
+    if isfile(sys.argv[-2]) and isfile(sys.argv[-1]):
         markdown_converter(sys.argv[-2], sys.argv[-1])
     else:
         print("Cannot access {} or {}".format(sys.argv[-2], sys.argv[-1]))
         help_and_exit()
 
-print("Uncaught case!")
+print("Uh Oh! Uncaught case.")
 exit(1)
