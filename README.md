@@ -7,3 +7,14 @@ Converts a markdown file to the HTML for sending as a newsletter using an existi
 
 ## USAGE
 `python3 newsletter.py [template file] [markdown file]`
+
+The template file should be a HTML file with all of the styling and such included.
+Put the string `<!--REPLACED_WITH_CONTENT-->` into the body where you want the content
+to go and it will be replaced with the content from the markdown.
+
+Otherwise the markdown is standard [CommonMark](https://spec.commonmark.org/).
+
+## TODO
+ - Look into better (more markdown like) way to add buttons.
+ - Add Docs into program help output.
+ - Add `[-v|--verbose]` flag to print HTML while program is running.
