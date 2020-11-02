@@ -2,7 +2,7 @@
 
 """
 Some license. I'm thinking of making the program itself open
-source but the style file should be closed source to protect
+source but the template file should be closed source to protect
 our branding somewhat.
 """
 
@@ -18,19 +18,16 @@ def help_and_exit():
     exit(1)
 
 
-def markdown_converter(style_path, markdown_path):
+def markdown_converter(template_path, markdown_path):
     print("Converting markdown to HTML...")
 
     md_file = open(markdown_path)
     markdown_raw = md_file.read()
     md_file.close()
     
-    contents = parse_markdown(markdown_raw)
-    sty_file = open(style_path)
-    contents.update({"style": sty_file.read()})
-    sty_file.close()
+    content = parse_markdown(markdown_raw)
 
-    html = to_html(contents)
+    html = to_html(template_path, content)
 
     newsletter_output = open("newsletter.html", "wt")
     newsletter_output.write(html)
@@ -45,17 +42,11 @@ def parse_markdown(markdown_raw):
     return contents
 
 
-def to_html(contents):
+def to_html(template_path, content):
     html_file = open("template.html")
     initial_html = html_file.read()
     html_file.close()
-
-    style = contents["style"]
-    title = contents["title"]
-    subtitle = contents["subtitle"]
-    content = contents["content"]
-
-    return initial_html.format(style, title, subtitle, content)
+    return initial_html.format(content)
 
 
 # Program entry
