@@ -33,8 +33,8 @@ def markdown_converter(template_path, markdown_path):
 
 
 def parse_markdown(markdown_raw):
-    contents = {"title": "<h1 class='title'>This is a title</h1>", "subtitle": "<h4>This is a subtitle</h4>", "content": "<p>This is some content</p>"}
-    return contents
+    content = {"title": "<h1 class='title'>This is a title</h1>", "subtitle": "<h4>This is a subtitle</h4>", "content": "<p>This is some content</p>"}
+    return content
 
 
 def to_html(template_path, content):
