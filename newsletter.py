@@ -9,6 +9,8 @@ our branding somewhat.
 import sys
 from os.path import isfile
 
+import marko
+
 
 def help_and_exit():
     print("Usage:")
@@ -33,7 +35,10 @@ def markdown_converter(template_path, markdown_path):
 
 
 def parse_markdown(markdown_raw):
-    content = {"title": "<h1 class='title'>This is a title</h1>", "subtitle": "<h4>This is a subtitle</h4>", "content": "<p>This is some content</p>"}
+    content = marko.convert(markdown_raw)
+    print("######## Marko start ########")
+    print(content)
+    print("########  Marko end  ########")
     return content
 
 
@@ -41,7 +46,8 @@ def to_html(template_path, content):
     html_file = open("template.html")
     initial_html = html_file.read()
     html_file.close()
-    return initial_html.format(content)
+    html_out = initial_html.replace("<!--REPLACED_WITH_CONTENT-->", content)
+    return html_out
 
 
 # Program entry
