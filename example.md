@@ -6,7 +6,7 @@
 ### This is an item header
 Normal text.
 This is some more text. This is some more text. **This is some bold text.** This is some more text. This is some more text.
-This is some more text. *This is some italic text*. This is some more text. This is some underlined text. This is some more text.
+This is some more text. *This is some italic text*. This is some more text. This is some more text. This is some more text.
 
 Here is a new paragraph. It also has a [link](https://www.example.com) in it.
 
