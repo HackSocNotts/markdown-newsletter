@@ -18,3 +18,5 @@ Otherwise the markdown is standard [CommonMark](https://spec.commonmark.org/).
  - Look into better (more markdown like) way to add buttons.
  - Add Docs into program help output.
  - Add `[-v|--verbose]` flag to print HTML while program is running.
+ - Check HTML output for accessibility.
+ - Check HTML output for compatibility. (I'm looking at you, Outlook)
