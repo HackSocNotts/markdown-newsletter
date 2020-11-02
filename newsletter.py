@@ -20,20 +20,15 @@ def help_and_exit():
 
 def markdown_converter(template_path, markdown_path):
     print("Converting markdown to HTML...")
-
     md_file = open(markdown_path)
     markdown_raw = md_file.read()
     md_file.close()
-    
     content = parse_markdown(markdown_raw)
-
     html = to_html(template_path, content)
-
     newsletter_output = open("newsletter.html", "wt")
     newsletter_output.write(html)
     newsletter_output.close()
     print("Done!")
-
     exit(0)
 
 
