@@ -36,9 +36,7 @@ def markdown_converter(template_path, markdown_path):
 
 def parse_markdown(markdown_raw):
     content = marko.convert(markdown_raw)
-    print("######## Marko start ########")
-    print(content)
-    print("########  Marko end  ########")
+    # print(content)
     return content
 
 
