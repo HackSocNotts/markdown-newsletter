@@ -41,7 +41,7 @@ def parse_markdown(markdown_raw):
 
 
 def to_html(template_path, content):
-    html_file = open("template.html")
+    html_file = open(template_path)
     initial_html = html_file.read()
     html_file.close()
     html_out = initial_html.replace("<!--REPLACED_WITH_CONTENT-->", content)
