@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 
-"""
-Some license. I'm thinking of making the program itself open
-source but the template file should be closed source to protect
-our branding somewhat. I'm thinking MIT or BSD.
-"""
+# Copyright (c) 2020 HackSoc Nottingham
+# License: MIT License
 
 import sys
 from os.path import isfile
