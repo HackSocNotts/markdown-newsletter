@@ -1,3 +1,8 @@
+# Program output
 newsletter.html
-newsletter*.md
+# Development enviroment files
 .vscode
+
+# HackSoc specific working files.
+newsletter*.md
+hacksoc.html
