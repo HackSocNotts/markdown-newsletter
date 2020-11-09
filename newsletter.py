@@ -8,14 +8,14 @@ our branding somewhat.
 
 import sys
 from os.path import isfile
-
-import marko
+from marko import convert
+from premailer import transform
 
 
 def help_and_exit():
     print("Usage:")
-    print("  newsletter [-h|--help] style markdown")
-    print("  Please specify a Style file and a Markdown file to convert.")
+    print("  newsletter [-h|--help] template markdown")
+    print("  Please specify a Template file and a Markdown file to convert.")
     print("\n  --help | -h | -?\n      Show this help and exit.")
     exit(1)
 
@@ -35,8 +35,7 @@ def markdown_converter(template_path, markdown_path):
 
 
 def parse_markdown(markdown_raw):
-    content = marko.convert(markdown_raw)
-    # print(content)
+    content = convert(markdown_raw)
     return content
 
 
@@ -44,7 +43,8 @@ def to_html(template_path, content):
     html_file = open(template_path)
     initial_html = html_file.read()
     html_file.close()
-    html_out = initial_html.replace("<!--REPLACED_WITH_CONTENT-->", content)
+    full_html = initial_html.replace("<!--REPLACED_WITH_CONTENT-->", content)
+    html_out = transform(full_html)  # Inlines CSS and does a couple other email HTML tweaks.
     return html_out
 
 
