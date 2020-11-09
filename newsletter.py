@@ -3,7 +3,7 @@
 """
 Some license. I'm thinking of making the program itself open
 source but the template file should be closed source to protect
-our branding somewhat.
+our branding somewhat. I'm thinking MIT or BSD.
 """
 
 import sys
