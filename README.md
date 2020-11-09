@@ -2,7 +2,7 @@
 Converts a markdown file to the HTML for sending as a newsletter using an existing template.
 
 ## REQUIREMENTS
- - A recent version of Python 3 (Only tested on Python 3.8.6)
+ - A recent version of Python 3 (Only tested on Python 3.8+)
  - [Marko](https://github.com/frostming/marko) `pip3 install marko`
  - [Premailer](https://github.com/peterbe/premailer) `pip3 install premailer`
 
